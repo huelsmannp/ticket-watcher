@@ -12,12 +12,7 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Code herunterladen
-        uses: actions/checkout@v4
-
-      - name: Python einrichten
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
+        uses: actions/checkout@v5
 
       - name: Playwright & Browser installieren
         run: |
@@ -25,4 +20,4 @@ jobs:
           playwright install --with-deps chromium
 
       - name: Skript ausführen
-        run: python ticket_watcher.py
+        run: python3 ticket_watcher.py
